@@ -12,8 +12,9 @@ async function fetchWithError(url, options) {
     }
 }
 
-export function getTodos() {  
-    const url = `${URL}/todos`;
+export function getTodos(options) {
+    const showAll = options && options.showAll;
+    const url = `${URL}/todos${showAll ? '?show=all' : ''}`;
     return fetchWithError(url);
 }
 
