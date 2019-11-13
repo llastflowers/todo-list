@@ -17,7 +17,7 @@ class TodoApp extends Component {
         const loading = new Loading({ loading: true });
         dom.appendChild(loading.renderDOM());
          
-        const todoForm = new todoForm({
+        const addTodo = new AddTodo({
             onAdd: async todo => {
                 loading.update({ loading: true });
                 error.textContent = '';
@@ -41,7 +41,7 @@ class TodoApp extends Component {
                 }
             }
         });
-        main.appendChild(todoForm.renderDOM());
+        main.appendChild(addTodo.renderDOM());
 
         const todoList = new TodoList({
             todos: [],
