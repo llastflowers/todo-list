@@ -5,7 +5,7 @@ class AddTodo extends Component {
     onRender(dom) {
         const onAdd = this.props.onAdd;
         const form = dom.querySelector('form');
-        const input = dom.querySelector('input[task=todo]');
+        const input = dom.querySelector('input[name=todo]');
         
         form.addEventListener('submit', async event => {
             event.preventDefault();
@@ -15,7 +15,7 @@ class AddTodo extends Component {
             };
 
             try {
-                await onAdd(todoItem); 
+                await onAdd(todoItem);
                 // this only runs if no error:
                 form.reset();
                 document.activeElement.blur();
