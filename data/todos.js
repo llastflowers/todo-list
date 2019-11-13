@@ -1,14 +1,14 @@
 module.exports = [
     {
         task: 'Invent the universe',
-        completed: true
+        complete: true
     },
     {
         task: 'Make an apple pie from scratch',
-        completed: false
+        complete: false
     },
     {
         task: 'Clean litter box',
-        completed: false
+        complete: false
     }
 ];

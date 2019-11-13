@@ -7,9 +7,9 @@ class TodoItem extends Component {
         const onUpdate = this.props.onUpdate;
         const onRemove = this.props.onRemove;
 
-        const completedButton = dom.querySelector('.completed-button');
-        completedButton.addEventListener('click', () => {
-            todo.completed = !todo.completed;
+        const completeButton = dom.querySelector('.complete-button');
+        completeButton.addEventListener('click', () => {
+            todo.complete = !todo.complete;
             onUpdate(todo);
         });
 
@@ -27,10 +27,10 @@ class TodoItem extends Component {
 
         return /*html*/`
            <li class="todo-item">
-                <span class="${todo.completed ? 'completed' : ''}">${todo.task}</span>
+                <span class="${todo.complete ? 'complete' : ''}">${todo.task}</span>
                 <div>
-                    <button class="completed-button">
-                        Mark ${todo.completed ? 'Open' : 'Done'}
+                    <button class="complete-button">
+                        Mark ${todo.complete ? 'Open' : 'Done'}
                     </button>
                     
                     <button class="remove-button">

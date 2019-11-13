@@ -43,11 +43,11 @@ app.post('/api/todos', async(req, res) => {
 
     try {
         const result = await client.query(`
-          INSERT INTO todos (task, completed)
+          INSERT INTO todos (task, complete)
           VALUES ($1, $2)
           RETURNING *;  
         `,
-        [todo.task, todo.completed]);
+        [todo.task, todo.complete]);
 
         res.json(result.rows[0]);
     }
@@ -67,10 +67,10 @@ app.put('/api/todos/:id', async(req, res) => {
         const result = await client.query(`
             UPDATE  todos
             SET     task = $2
-                    completed = $3
+                    complete = $3
             WHERE   id = $1
             RETURNING *;
-        `, [id, todo.task, todo.completed]);
+        `, [id, todo.task, todo.complete]);
      
         res.json(result.rows[0]);
     }
