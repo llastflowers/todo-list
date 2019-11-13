@@ -20,11 +20,11 @@ app.use(express.json()); // enable reading incoming json data
 // API Routes
 
 // *** TODOS ***
-app.get('/api/todos', async (req, res) => {
+app.get('/api/todos', async(req, res) => {
 
     try {
         const result = await client.query(`
-            
+           SELECT * FROM todos
         `);
 
         res.json(result.rows);
@@ -38,14 +38,16 @@ app.get('/api/todos', async (req, res) => {
 
 });
 
-app.post('/api/todos', async (req, res) => {
+app.post('/api/todos', async(req, res) => {
     const todo = req.body;
 
     try {
         const result = await client.query(`
-            
+          INSERT INTO todos (name, completed)
+          VALUES ($1, $2)
+          RETURNING *;  
         `,
-        [/* pass in data */]);
+        [todo.name, todo.completed]);
 
         res.json(result.rows[0]);
     }
@@ -57,14 +59,18 @@ app.post('/api/todos', async (req, res) => {
     }
 });
 
-app.put('/api/todos/:id', async (req, res) => {
+app.put('/api/todos/:id', async(req, res) => {
     const id = req.params.id;
     const todo = req.body;
 
     try {
         const result = await client.query(`
-            
-        `, [/* pass in data */]);
+            UPDATE  todos
+            SET     name = $2
+                    completed = $3
+            WHERE   id = $1
+            RETURNING *;
+        `, [id, todo.name, todo.completed]);
      
         res.json(result.rows[0]);
     }
@@ -76,14 +82,16 @@ app.put('/api/todos/:id', async (req, res) => {
     }
 });
 
-app.delete('/api/todos/:id', async (req, res) => {
+app.delete('/api/todos/:id', async(req, res) => {
     // get the id that was passed in the route:
     const id = 0; // ???
 
     try {
         const result = await client.query(`
-         
-        `, [/* pass data */]);
+            DELETE  FROM todos
+            WHERE   id = $1
+            RETURNING *;
+        `, [id]);
         
         res.json(result.rows[0]);
     }
