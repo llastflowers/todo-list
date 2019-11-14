@@ -80,11 +80,11 @@ app.post('/api/todos', async(req, res) => {
 
     try {
         const result = await client.query(`
-          INSERT INTO todos (task, complete)
-          VALUES ($1, $2)
+          INSERT INTO todos (user_id, task, complete)
+          VALUES ($1, $2, $3)
           RETURNING *;  
         `,
-        [todo.task, todo.complete]);
+        [req.userId, todo.task, todo.complete]);
 
         res.json(result.rows[0]);
     }

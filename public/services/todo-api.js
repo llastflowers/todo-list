@@ -60,6 +60,7 @@ export function addTodo(todo) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': token
         },
         body: JSON.stringify(todo)
     });
@@ -71,6 +72,7 @@ export function updateTodo(todo) {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': token
         },
         body: JSON.stringify(todo)
     });
