@@ -6,8 +6,8 @@ QUnit.module('Render Todo Item');
 test('renders html from data', assert => {
     // arrange
     const todo = {
-        id: 3,
-        task: 'Clean litter box',
+        id: 1,
+        task: 'Invent the universe',
         complete: true
     };
 
