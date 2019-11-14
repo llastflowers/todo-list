@@ -24,3 +24,7 @@ button:hover {
 button:active {
     background-color: white;
 }
+
+input {
+    height: 30px;
+}
