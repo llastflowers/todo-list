@@ -7,7 +7,7 @@ test('renders html from data', assert => {
     // arrange
     const todo = {
         id: 3,
-        task: 'Tested Design',
+        task: 'Clean litter box',
         complete: true
     };
 
