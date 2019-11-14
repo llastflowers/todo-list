@@ -2,6 +2,7 @@ body {
     font-family: verdana;
     background: rgb(236, 229, 238);
     line-height: 1.5em;
+    margin-left: 2%;
 }
 
 * {
