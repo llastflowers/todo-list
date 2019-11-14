@@ -19,4 +19,18 @@
 
 5) Remove ToDo -- add event listener to TodoItem on click, which calls this.props.onRemove.
 
-6) 
+-----------
+
+_SERVER_
+
+1) Add user table
+
+2) Add user routes
+
+_CLIENT_
+
+1) Make login screen in homepage
+
+2) Add form for log in and sign up
+
+3) Add logic to redirect user if they have no token
