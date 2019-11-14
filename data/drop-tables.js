@@ -8,6 +8,7 @@ async function run() {
         await client.connect();
     
         await client.query(`
+            DROP TABLE IS EXISTS users;
             DROP TABLE IF EXISTS todos;
         `);
 
