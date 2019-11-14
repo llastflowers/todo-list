@@ -10,8 +10,8 @@ body {
 
 button {
     background-color: white;
-    border-radius: 10px;
-    height: 20px;
-    padding: 5px;
+    border-radius: 7px;
+    height: 25px;
+    padding: 10px;
     border: 1px solid black;
 }
