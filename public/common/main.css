@@ -28,4 +28,5 @@ button:active {
 input {
     height: 30px;
     border-radius: 7px;
+    border: 1px solid black;
 }
