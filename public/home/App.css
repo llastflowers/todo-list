@@ -17,7 +17,7 @@ main p.errors, .user-display {
 
 .errors {
     font-family: monospace;
-    color: red;
+    color: rgb(168, 0, 0);
 }
 
 .no-display {
