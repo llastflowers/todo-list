@@ -27,4 +27,5 @@ main p.errors, .user-display {
 label {
     display: inline-block;
     width: 80px;
+    padding-right: 10px;
 }
