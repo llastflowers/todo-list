@@ -58,14 +58,13 @@ app.get('/api/test', (req, res) => {
 
 // *** TODOS ***
 app.get('/api/todos', async(req, res) => {
-
     try {
         const result = await client.query(`
-           SELECT * FROM todos
-           WHERE user_id=$1
-        ` [req.userId]
-        );
-
+        SELECT * FROM todos        
+        WHERE user_id = $1;
+        `, 
+        [req.userId]);
+        
         res.json(result.rows);
     }
     catch (err) {
@@ -74,7 +73,7 @@ app.get('/api/todos', async(req, res) => {
             error: err.message || err
         });
     }
-
+    
 });
 
 app.post('/api/todos', async(req, res) => {

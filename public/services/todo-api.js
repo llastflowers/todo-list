@@ -48,9 +48,9 @@ export function signIn(credentials) {
     });
 }
 
-export function getTodos(options) {
-    const showAll = options && options.showAll;
-    const url = `${URL}/todos${showAll ? '?show=all' : ''}`;
+export function getTodos() {
+    // const showAll = options && options.showAll;
+    const url = `${URL}/todos`;
     return fetchWithError(url);
 }
 
