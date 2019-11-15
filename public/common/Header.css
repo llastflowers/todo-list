@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Literata&display=swap');
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-around;
+    background: #f8f3f3;
+    border-bottom: 1px solid grey;
+}
+
+h1 {
+    font-size: 2em;
+    font-family: 'Literata', serif;
+    font-weight: bold;
+    margin: 10px 20px;
+    flex-grow: 1;
+}
+
+nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+nav a:active {
+    color: plum;
+}
